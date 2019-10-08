@@ -10,18 +10,18 @@ import UIKit
 
 class LettersViewController: UIViewController {
 
+    @IBOutlet weak var toggleBarButton: UIBarButtonItem!
+    var isScattered: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    
     }
     
-    var isScattered: Bool = false
     
-    private var toggleBarButton: UIBarButtonItem!
-    
-    //TODO: Connect an IBAction to your view controller: toggleButtonPressed(_:).
-    @IBAction func toggleButtonPressed(button: UIBarButtonItem) {
+    @IBAction func toggleBarButtonTapped(_ sender: UIBarButtonItem) {
+        
         
         //TODO: add scattering and gathering func here
         if isScattered == false {
@@ -33,20 +33,17 @@ class LettersViewController: UIViewController {
             
             isScattered = false
         }
-    }
-    
-    
-    
-    
-    private func setUpToggleBarButton() {
-        
-        let toggleBarButtom = UIBarButtonItem()
-        navigationItem.rightBarButtonItem = toggleBarButtom
-        toggleBarButtom.title = "Toggle"
         
     }
     
+  
     
+    //private var toggleBarButton: UIBarButtonItem!
+    
+    
+    
+    
+ 
     
     
     
