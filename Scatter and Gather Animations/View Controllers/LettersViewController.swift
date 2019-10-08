@@ -16,7 +16,66 @@ class LettersViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    var isScattered: Bool = false
+    
+    private var toggleBarButton: UIBarButtonItem!
+    
+    //TODO: Connect an IBAction to your view controller: toggleButtonPressed(_:).
+    @IBAction func toggleButtonPressed(button: UIBarButtonItem) {
+        
+        //TODO: add scattering and gathering func here
+        if isScattered == false {
+            
+            
+            isScattered = true
+        } else {
+            
+            
+            isScattered = false
+        }
+    }
+    
+    
+    
+    
+    private func setUpToggleBarButton() {
+        
+        let toggleBarButtom = UIBarButtonItem()
+        navigationItem.rightBarButtonItem = toggleBarButtom
+        toggleBarButtom.title = "Toggle"
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
