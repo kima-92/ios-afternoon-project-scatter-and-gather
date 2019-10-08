@@ -86,6 +86,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="a2Label" destination="dP8-aH-eTP" id="SGp-G6-apK"/>
+                        <outlet property="aLabel" destination="ikI-Ce-VGH" id="aBc-qa-Jq7"/>
+                        <outlet property="bLabel" destination="G3Q-dG-5T4" id="c3i-4r-pxN"/>
+                        <outlet property="dLabel" destination="Sug-KE-xku" id="NYH-og-PBU"/>
+                        <outlet property="lLabel" destination="SsS-zf-rPb" id="ExH-rR-98k"/>
+                        <outlet property="lambdaImageView" destination="Bvg-NV-TUe" id="7DW-cT-NDh"/>
+                        <outlet property="mLabel" destination="HD6-xg-RAh" id="hEO-H9-lcJ"/>
                         <outlet property="toggleBarButton" destination="WQk-Ca-faS" id="dob-ns-fKQ"/>
                     </connections>
                 </viewController>
