@@ -139,9 +139,10 @@ class LettersViewController: UIViewController {
     
     func gather() {
         
-        UIView.animate(withDuration: 2, delay: 0, animations: {
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn], animations: {
             self.lambdaImageView.alpha = 1
             
+            // Rotationg each letter to it's original form
             self.lLabel.transform = .identity
             self.aLabel.transform = .identity
             self.mLabel.transform = .identity
@@ -165,51 +166,24 @@ class LettersViewController: UIViewController {
             self.dLabel.textColor = .black
             self.a2Label.textColor = .black
             
-            self.labelsStackView()
+            // Animated Letters going back to the top
+            self.lLabel.center.x = 35
+            self.lLabel.center.y = 20
+
+            self.aLabel.center.x = 94
+            self.aLabel.center.y = 20
+
+            self.mLabel.center.x = 156.5
+            self.mLabel.center.y = 20
+
+            self.bLabel.center.x = 226
+            self.bLabel.center.y = 20
+
+            self.dLabel.center.x = 288
+            self.dLabel.center.y = 20
+
+            self.a2Label.center.x = 352.5
+            self.a2Label.center.y = 20
         })
-        
     }
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
