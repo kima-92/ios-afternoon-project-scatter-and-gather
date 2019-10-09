@@ -29,7 +29,7 @@ class LettersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        labelsStackView()
     
     }
     
@@ -67,23 +67,30 @@ class LettersViewController: UIViewController {
         return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1.0)
     }
     
-//    private func contrainLabels() {
-//        let stackView = UIStackView(arrangedSubviews: [
-//           
-//        
-//        
-//        ])
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.axis = .horizontal
-//        stackView.distribution = .equalSpacing
-//        
-//        view.addSubview(stackView)
-//        
-//        NSLayoutConstraint.activate([
-//            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-//            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-//            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)    }
-//    
+    private func labelsStackView() {
+        let stackView = UIStackView(arrangedSubviews: [
+            self.lLabel,
+            self.aLabel,
+            self.mLabel,
+            self.bLabel,
+            self.dLabel,
+            self.a2Label
+        ])
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        ])
+        
+    }
+    
     
   
     func scatter() {
@@ -91,30 +98,7 @@ class LettersViewController: UIViewController {
         UIView.animate(withDuration: 2, delay: 0, animations: {
             
             self.lambdaImageView.alpha = 0
-            //self.letterLabels.map({ $0.center.y }) = self.getRandomNumber()
-            
-//            for label in self.letterLabels {
-//                label.center.y = self.getRandomNumber()
-//                label.backgroundColor = self.randomColor()
-//                label.textColor = self.randomColor()
-//                label.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
-//            }
-//
-//
-//            self.lLabel.transform = CGAffineTransform(
-//
-//            self.aLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
-//
-//            self.mLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
-//
-//            self.bLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
-//
-//            self.aLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
-//
-//            self.a2Label.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
-//
-//
-            
+      
             
             // Changing location for each letter
             self.lLabel.center.y = self.getRandomNumber()
@@ -149,18 +133,13 @@ class LettersViewController: UIViewController {
           
 
         })
-//        { (_) in
-//
-//
-//        }
-//
-        
+      
         
     }
     
     func gather() {
         
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 2, delay: 0, animations: {
             self.lambdaImageView.alpha = 1
             
             self.lLabel.transform = .identity
@@ -185,6 +164,8 @@ class LettersViewController: UIViewController {
             self.bLabel.textColor = .black
             self.dLabel.textColor = .black
             self.a2Label.textColor = .black
+            
+            self.labelsStackView()
         })
         
     }
