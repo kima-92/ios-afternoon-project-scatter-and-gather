@@ -50,7 +50,7 @@ class LettersViewController: UIViewController {
     }
     
     func getRandomNumber() -> CGFloat {
-        let number = CGFloat.random(in: -300...1)
+        let number = CGFloat.random(in: 300...800)
         return number
     }
     
@@ -67,6 +67,23 @@ class LettersViewController: UIViewController {
         return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1.0)
     }
     
+//    private func contrainLabels() {
+//        let stackView = UIStackView(arrangedSubviews: [
+//           
+//        
+//        
+//        ])
+//        stackView.translatesAutoresizingMaskIntoConstraints = false
+//        stackView.axis = .horizontal
+//        stackView.distribution = .equalSpacing
+//        
+//        view.addSubview(stackView)
+//        
+//        NSLayoutConstraint.activate([
+//            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+//            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)    }
+//    
     
   
     func scatter() {
@@ -83,6 +100,22 @@ class LettersViewController: UIViewController {
 //                label.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
 //            }
 //
+//
+//            self.lLabel.transform = CGAffineTransform(
+//
+//            self.aLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
+//
+//            self.mLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
+//
+//            self.bLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
+//
+//            self.aLabel.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
+//
+//            self.a2Label.transform = CGAffineTransform(scaleX: self.getSmallRandomNumber(), y: self.getSmallRandomNumber())
+//
+//
+            
+            
             // Changing location for each letter
             self.lLabel.center.y = self.getRandomNumber()
             self.aLabel.center.y = self.getRandomNumber()
@@ -127,14 +160,32 @@ class LettersViewController: UIViewController {
     
     func gather() {
         
-        UIView.animate(withDuration: 2) {
+        UIView.animate(withDuration: 2, animations: {
+            self.lambdaImageView.alpha = 1
+            
             self.lLabel.transform = .identity
             self.aLabel.transform = .identity
             self.mLabel.transform = .identity
             self.bLabel.transform = .identity
             self.dLabel.transform = .identity
             self.a2Label.transform = .identity
-        }
+            
+            // changing background color for each letter
+            self.lLabel.backgroundColor = .clear
+            self.aLabel.backgroundColor = .clear
+            self.mLabel.backgroundColor = .clear
+            self.bLabel.backgroundColor = .clear
+            self.dLabel.backgroundColor = .clear
+            self.a2Label.backgroundColor = .clear
+            
+            // changing textColor for each letter
+            self.lLabel.textColor = .black
+            self.aLabel.textColor = .black
+            self.mLabel.textColor = .black
+            self.bLabel.textColor = .black
+            self.dLabel.textColor = .black
+            self.a2Label.textColor = .black
+        })
         
     }
     
